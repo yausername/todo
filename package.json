@@ -1,0 +1,29 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "ToDo list CLI powered by github gists",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "todo",
+    "todo-list",
+    "gists",
+    "todo-cli"
+  ],
+  "author": "Ritvik Saraf",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "commander": "^2.15.1",
+    "dotenv": "^5.0.1",
+    "inquirer": "^5.2.0",
+    "make-dir": "^1.2.0",
+    "winston": "^3.0.0-rc4"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.5",
+    "standard": "^11.0.1"
+  }
+}
