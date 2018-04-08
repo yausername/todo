@@ -3,15 +3,12 @@
 require('dotenv').config()
 
 const program = require('commander')
-const { verbose } = require('./log')
+const log = require('./log')
 const todo = require('./todo')
 
 program
   .version('0.1.0')
   .description('awesome todo list cli')
-
-program
-  .option('-v, --verbose', 'verbose logging', verbose)
 
 program
   .command('init')
@@ -54,7 +51,7 @@ if (!program.args.length) {
 }
 
 function unknownCmd () {
-  console.error('Invalid command: "%s". See "--help" for a list of available commands.',
+  log.e('Invalid command: %s\nSee --help for a list of available commands.',
     program.args.join(' '))
   process.exit(1)
 }
