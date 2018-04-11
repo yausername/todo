@@ -1,8 +1,25 @@
 
-const log = require('./log')
+const fs = require('fs');
 
-function init () {
-  log.o(arguments.callee.name)
+const log = require('./log')
+const git = require('./git')
+
+const dataDir = process.env.HOME + '/.todo'
+const todoFile = dataDir + '/todo.md'
+const doneFile = dataDir + '/done.md'
+
+async function init (url) {
+  // continue only if git is installed
+  await git.installed()
+
+  // clone a gist
+  await git.clone(url, dataDir)
+
+  // create files
+  await Promise.all([createFile(todoFile), createFile(doneFile)])
+
+  // commit and push
+  await git.update(dataDir, 'initial commit')
 }
 
 function pending () {
@@ -14,11 +31,17 @@ function list () {
 }
 
 function add (todo) {
-  log.o(arguments.callee.name)
+  log.o(arguments.callee.name + todo)
 }
 
 function done (id, ids) {
   log.o(arguments.callee.name)
+}
+
+async function createFile (path) {
+  await fs.open(path, 'w', function (err, file) {
+    if (err) throw err
+  })
 }
 
 module.exports = {

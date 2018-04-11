@@ -11,11 +11,11 @@ program
   .description('awesome todo list cli')
 
 program
-  .command('init')
+  .command('init <url>')
   .alias('i')
-  .description('create an empty todo gist on github')
-  .action(() => {
-    todo.init()
+  .description('initialize with a gist from github')
+  .action((url) => {
+    todo.init(url)
   })
 
 program
@@ -46,7 +46,8 @@ program.parse(process.argv)
 
 if (!program.args.length) {
   todo.pending()
-} else if (!program.args.find(cmd => typeof cmd !== 'string')) {
+} else if (!program.args.find(cmd => typeof cmd === 'object')) {
+  // if no command was executed
   unknownCmd()
 }
 
