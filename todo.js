@@ -1,5 +1,5 @@
 
-const fs = require('fs');
+const fs = require('fs')
 
 const log = require('./log')
 const git = require('./git')
@@ -10,15 +10,19 @@ const doneFile = dataDir + '/done.md'
 
 async function init (url) {
   // continue only if git is installed
+  log.o('verifing if git is installed')
   await git.installed()
 
   // clone a gist
+  log.o(`cloning the gist in ${dataDir}`)
   await git.clone(url, dataDir)
 
   // create files
+  log.o('creating todo files')
   await Promise.all([createFile(todoFile), createFile(doneFile)])
 
   // commit and push
+  log.o('pushing updates to remote')
   await git.update(dataDir, 'initial commit')
 }
 

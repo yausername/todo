@@ -11,6 +11,13 @@ program
   .description('awesome todo list cli')
 
 program
+  .option('-v, --verbose', 'verbose logging')
+
+program.on('option:verbose', function () {
+  process.env.VERBOSE = this.verbose
+})
+
+program
   .command('init <url>')
   .alias('i')
   .description('initialize with a gist from github')
@@ -42,17 +49,15 @@ program
     todo.done(id, ids)
   })
 
+program
+  .on('command:*', function () {
+    log.e('Invalid command: %s\nSee --help for a list of available commands.',
+      program.args.join(' '))
+    process.exit(1)
+  })
+
 program.parse(process.argv)
 
 if (!program.args.length) {
   todo.pending()
-} else if (!program.args.find(cmd => typeof cmd === 'object')) {
-  // if no command was executed
-  unknownCmd()
-}
-
-function unknownCmd () {
-  log.e('Invalid command: %s\nSee --help for a list of available commands.',
-    program.args.join(' '))
-  process.exit(1)
 }
