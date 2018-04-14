@@ -1,5 +1,5 @@
 {
-  "name": "to-do-cli",
+  "name": "todo-gist-cli",
   "version": "0.0.1",
   "description": "ToDo list CLI powered by github gists",
   "main": "index.js",
