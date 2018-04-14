@@ -2,7 +2,7 @@ const util = require('util')
 const chalk = require('chalk')
 
 function info () {
-  console.log('info: %s', util.format.apply(util, arguments))
+  if (!process.env.QUIET) console.log('info: %s', util.format.apply(util, arguments))
 }
 
 function err () {
