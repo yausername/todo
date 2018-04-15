@@ -1,6 +1,6 @@
 {
   "name": "todo-gist-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "ToDo list CLI powered by github gists",
   "main": "index.js",
   "preferGlobal": true,
