@@ -30,7 +30,7 @@
 ## Exmaples
      
       # initialize with a gist (git should be working with ssh)
-      # create a secret gist at https://gist.github.com/
+      # create a secret gist at https://gist.github.com/. Below is an example
       todo i git@gist.github.com:13e1eb14f566f48be66d57ecbf99767d.git
       
       # add todos
