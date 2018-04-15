@@ -29,20 +29,20 @@
       
 ## Exmaples
      
-      #initialize with a gist (git should be working with ssh)
-      #create a secret gist at https://gist.github.com/
+      # initialize with a gist (git should be working with ssh)
+      # create a secret gist at https://gist.github.com/
       todo i git@gist.github.com:13e1eb14f566f48be66d57ecbf99767d.git
       
-      #add todos
+      # add todos
       todo a "go to gym"
       todo a "eat pizza"
       todo a "eat burger"
       
-      #mark todos as done
+      # mark todos as done
       todo d 2 3
       
-      #see pending todos
+      # see pending todos
       todo
       
-      #see help
+      # see help
       todo -h
