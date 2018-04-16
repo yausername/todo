@@ -47,4 +47,6 @@
       # see help
       todo -h
 
-[![asciicast](https://asciinema.org/a/176600.png)](https://asciinema.org/a/176600)
+## Demo
+
+    [![asciicast](https://asciinema.org/a/176600.png)](https://asciinema.org/a/176600)
