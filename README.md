@@ -49,4 +49,4 @@
 
 ## Demo
 
-    [![asciicast](https://asciinema.org/a/176600.png)](https://asciinema.org/a/176600)
+[![asciicast](https://asciinema.org/a/176600.png)](https://asciinema.org/a/176600)
